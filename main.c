@@ -29,10 +29,10 @@ struct sys *read_sys(void) {
   struct sys *s = malloc(sizeof(struct sys));
   int cFD = open(CAP, O_RDONLY, 0);
   int sFD = open(STAT, O_RDONLY, 0);
-  char status[40] = "";
+  char status[16] = "";
   char capacity[4] = "";
 
-  read(cFD, capacity, 30);
+  read(cFD, capacity, 16);
   read(sFD, status, 4);
   close(cFD);
   close(sFD);
