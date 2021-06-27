@@ -2,6 +2,8 @@
 
 Display battery windows info in tmux or screen-gnu
 
+Make sure that you have installed any font from <a href="https://github.com/ryanoasis/nerd-fonts">ryanoasis/nerd-fonts</a> and changed your wsl/windows cmd default font.
+
 usage:
 cbattery for screen-gnu
 cbattery -t for tmux
