@@ -30,10 +30,10 @@ struct sys *read_sys(void) {
   int cFD = open(CAP, O_RDONLY, 0);
   int sFD = open(STAT, O_RDONLY, 0);
   char status[40] = "";
-  char capacity[40] = "";
+  char capacity[4] = "";
 
   read(cFD, capacity, 30);
-  read(sFD, status, 30);
+  read(sFD, status, 4);
   close(cFD);
   close(sFD);
 
