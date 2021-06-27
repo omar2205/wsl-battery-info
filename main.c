@@ -31,7 +31,6 @@ struct sys {
 };
 
 struct sys *read_sys(void) {
-  /** t: 0 status, 1 capacity */
   struct sys *s = malloc(sizeof(struct sys));
   int cFD = open(CAP, O_RDONLY, 0);
   int sFD = open(STAT, O_RDONLY, 0);
