@@ -4,11 +4,6 @@
  * arg: -t change output for tmux
  */
 
-#define CAT "/usr/bin/cat"
-#define SYSPATH " /sys/class/power_supply/BAT1/"
-#define READ_STATUS CAT SYSPATH "status"
-#define READ_CAPACITY CAT SYSPATH "capacity"
-
 #define CAP "/sys/class/power_supply/BAT1/capacity"
 #define STAT "/sys/class/power_supply/BAT1/status"
 
@@ -60,7 +55,6 @@ struct sys *read_sys(void) {
 int main(int argc, char *argv[]) {
   struct sys *sy = NULL;
   sy = read_sys();
-  int power = sy->stat;
 
   bool isTmux = false;
   char* symbol = "";
@@ -86,6 +80,7 @@ int main(int argc, char *argv[]) {
     else color = "\005{..g}"; // green
   }
 
+  // symbols are from Nerdfonts
   switch(sy->cap) {
     case 96 ... 100:
       if(sy->is_charging) symbol = "\uf0e7\uf578";
