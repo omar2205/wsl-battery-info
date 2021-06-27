@@ -32,8 +32,8 @@ struct sys *read_sys(void) {
   char status[16] = "";
   char capacity[4] = "";
 
-  read(cFD, capacity, 16);
-  read(sFD, status, 4);
+  read(cFD, capacity, 4);
+  read(sFD, status, 16);
   close(cFD);
   close(sFD);
 
