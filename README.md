@@ -2,6 +2,29 @@
 
 Display battery windows info in tmux or screen-gnu
 
+usage:
+cbattery for screen-gnu
+cbattery -t for tmux
+
+### tmux
+
+in ~/.tmux.conf:
+
+```
+set -g status-right "#(cbattery -t)"
+```
+
+### screen-gnu
+
+in ~/.screenrc:
+
+```
+backtick 1 1 1 $HOME/bin/cbattery
+hardstatus string '[%1`%{g}]'
+```
+
+### Not working?
+
 if it isn't working change "CAP" or "STAT" headers in main.c:12
 
 use `build.sh` to build and copy to ~/bin/cbattery
