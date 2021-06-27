@@ -98,31 +98,31 @@ int main(int argc, char *argv[]) {
       if(sy->is_charging) symbol = "\uf0e7\uf57f";
       else symbol = "\uf57f";
       break;
-    case 61 ... 69:
+    case 60 ... 69:
       if(sy->is_charging) symbol = "\uf0e7\uf57e";
       else symbol = "\uf57e";
       break;
-    case 51 ... 59:
+    case 50 ... 59:
       if(sy->is_charging) symbol = "\uf0e7\uf57d";
       else symbol = "\uf57d";
       break;
-    case 41 ... 49:
+    case 40 ... 49:
       if(sy->is_charging) symbol = "\uf0e7\uf57c";
       else symbol = "\uf57c";
       break;
-    case 31 ... 39:
+    case 30 ... 39:
       if(sy->is_charging) symbol = "\uf0e7\uf57b";
       else symbol = "\uf57b";
       break;
-    case 21 ... 29:
+    case 20 ... 29:
       if(sy->is_charging) symbol = "\uf0e7\uf57a";
       else symbol = "\uf57a";
       break;
-    case 11 ... 19:
+    case 10 ... 19:
       if(sy->is_charging) symbol = "\uf0e7\uf579";
       else symbol = "\uf579";
       break;
-    case 0 ... 10:
+    case 0 ... 9:
       if(sy->is_charging) symbol = "\uf0e7\uf58d";
       else symbol = "\uf58d";
       break;
