@@ -128,7 +128,7 @@ int main(int argc, char *argv[]) {
       break;
   }
   
-  printf("%s%s %i", color, symbol, sy->cap);
+  printf("%s%s %i%%", color, symbol, sy->cap);
 
   return 0;
 }
