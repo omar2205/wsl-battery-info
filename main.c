@@ -7,9 +7,6 @@
 #define CAP "/sys/class/power_supply/BAT1/capacity"
 #define STAT "/sys/class/power_supply/BAT1/status"
 
-#define O_RDONLY         00
-#define O_WRONLY         01
-#define O_RDWR           02
 
 #include <stdio.h>
 #include <stdlib.h>
