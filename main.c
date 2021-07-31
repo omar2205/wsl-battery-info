@@ -57,8 +57,7 @@ int main(int argc, char *argv[]) {
   char* symbol = "";
   char* color = "";
 
-  // invert strcmp for some reasone :p
-  if(argc >= 2 && !strcmp(argv[1], "-t"))
+  if(argc >= 2 && strcmp(argv[1], "-t") == 0)
     isTmux = true;
 
 
