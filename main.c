@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
   switch(sy->cap) {
     case 96 ... 100:
       if(sy->is_charging) symbol = "\uf0e7\uf578";
-      else symbol = "\uf0e7\uf578";
+      else symbol = "\uf578";
       break;
     case 90 ... 95:
       if(sy->is_charging) symbol = "\uf0e7\uf581";
