@@ -64,16 +64,12 @@ int main(int argc, char *argv[]) {
 
   // tmux output
   if(isTmux) {
-    if(sy->cap < 20)
-      color = "#[fg=colour1,bg=colour233,bold]"; // red
-    else if(sy->cap < 60)
-      color = "#[fg=colour3,bg=colour233,bold]"; // yellow
+    if(sy->cap < 20) color = "#[fg=colour1,bg=colour233,bold]"; // red
+    else if(sy->cap < 60) color = "#[fg=colour3,bg=colour233,bold]"; // yellow
     else color = "#[fg=colour2,bg=colour233,bold]"; // green
   } else {
-    if(sy->cap < 20)
-      color = "\005{..r}"; // red
-    else if(sy->cap < 60)
-      color = "\005{..y}"; // yellow
+    if(sy->cap < 20) color = "\005{..r}"; // red
+    else if(sy->cap < 60) color = "\005{..y}"; // yellow
     else color = "\005{..g}"; // green
   }
 
