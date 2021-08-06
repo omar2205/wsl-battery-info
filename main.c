@@ -7,6 +7,14 @@
 #define CAP "/sys/class/power_supply/BAT1/capacity"
 #define STAT "/sys/class/power_supply/BAT1/status"
 
+// nerd fonts
+#define BOLT "\uf0e7"
+// Define fa codes
+#define FA_BAT0 "\uf244\uf22f"      // <20
+#define FA_BAT1 "\uf243\uf22f"      // 20-29
+#define FA_BAT2 "\uf242\uf22f"      // 30-49
+#define FA_BAT3 "\uf241\uf22f"      // 50-79
+#define FA_BAT_FULL "\uf240\uf22f"  // 80-100
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,49 +82,25 @@ int main(int argc, char *argv[]) {
 
   // symbols are from Nerdfonts
   switch(sy->cap) {
-    case 96 ... 100:
-      if(sy->is_charging) symbol = "\uf0e7\uf578";
-      else symbol = "\uf578";
+    case 80 ... 100:
+      if(sy->is_charging) symbol = BOLT FA_BAT_FULL;
+      else symbol = FA_BAT_FULL;
       break;
-    case 90 ... 95:
-      if(sy->is_charging) symbol = "\uf0e7\uf581";
-      else symbol = "\uf581";
+    case 50 ... 79:
+      if(sy->is_charging) symbol = BOLT FA_BAT3;
+      else symbol = FA_BAT3;
       break;
-    case 80 ... 89:
-      if(sy->is_charging) symbol = "\uf0e7\uf580";
-      else symbol = "\uf580";
-      break;
-    case 70 ... 79:
-      if(sy->is_charging) symbol = "\uf0e7\uf57f";
-      else symbol = "\uf57f";
-      break;
-    case 60 ... 69:
-      if(sy->is_charging) symbol = "\uf0e7\uf57e";
-      else symbol = "\uf57e";
-      break;
-    case 50 ... 59:
-      if(sy->is_charging) symbol = "\uf0e7\uf57d";
-      else symbol = "\uf57d";
-      break;
-    case 40 ... 49:
-      if(sy->is_charging) symbol = "\uf0e7\uf57c";
-      else symbol = "\uf57c";
-      break;
-    case 30 ... 39:
-      if(sy->is_charging) symbol = "\uf0e7\uf57b";
-      else symbol = "\uf57b";
+    case 30 ... 49:
+      if(sy->is_charging) symbol = BOLT FA_BAT2;
+      else symbol = FA_BAT2;
       break;
     case 20 ... 29:
-      if(sy->is_charging) symbol = "\uf0e7\uf57a";
-      else symbol = "\uf57a";
+      if(sy->is_charging) symbol = BOLT FA_BAT1;
+      else symbol = FA_BAT1;
       break;
-    case 10 ... 19:
-      if(sy->is_charging) symbol = "\uf0e7\uf579";
-      else symbol = "\uf579";
-      break;
-    case 0 ... 9:
-      if(sy->is_charging) symbol = "\uf0e7\uf58d";
-      else symbol = "\uf58d";
+    default:
+      if(sy->is_charging) symbol = BOLT FA_BAT0;
+      else symbol = FA_BAT0;
       break;
   }
   
